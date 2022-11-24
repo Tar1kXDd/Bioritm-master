@@ -1,0 +1,40 @@
+﻿<Window x:Class="Bioritm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bioritm"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="1000">
+    <Grid Margin="0,10,25.6,0">
+        <DatePicker HorizontalAlignment="Left" Margin="140,69,0,0" VerticalAlignment="Top"/>
+        <Label Content="Дата Рождения:" HorizontalAlignment="Left" Height="26" Margin="30,26,0,0" VerticalAlignment="Top" Width="96" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.472"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Rectangle HorizontalAlignment="Left" Height="10" Margin="30,154,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="-43.778,-7.494"/>
+        <Label Content="Дата отчёта:" HorizontalAlignment="Left" Margin="30,67,0,0" VerticalAlignment="Top" Width="91"/>
+        <DatePicker HorizontalAlignment="Left" Margin="140,28,0,0" VerticalAlignment="Top"/>
+        <Label Content="Длительность прогноза" HorizontalAlignment="Left" Margin="30,108,0,0" VerticalAlignment="Top" Width="148"/>
+        <ComboBox HorizontalAlignment="Left" Margin="201,112,0,0" VerticalAlignment="Top" Width="38" Height="14"/>
+        <Label Content="Произвольная длительность прогноза" HorizontalAlignment="Left" Margin="42,145,0,0" VerticalAlignment="Top" Width="197"/>
+        <Frame Content="Исходные данные" Margin="17,2,726,299.8" Navigated="Frame_Navigated_1"/>
+        <Frame Content="Статистика" Margin="687,2,23,299.8"/>
+        <DataGrid IsReadOnly="True" CanUserAddRows="False" AutoGenerateColumns="False" Name="Dates" Margin="244,0,281,299.8" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Date}" Width="*" Header="Дата"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Physical}" Width="*" Header="Физический"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Emotional}" Width="*" Header="Эмоциональный"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Intellectual}" Width="*" Header="Интелектуальный"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Total}" Width="*" Header="Суммарное"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <GroupBox Header="График" HorizontalAlignment="Left" Height="169" Margin="0,342,-24,-0.2" VerticalAlignment="Top" Width="992" RenderTransformOrigin="0.499,0.091"/>
+    </Grid>
+</Window>
